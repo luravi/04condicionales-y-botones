@@ -1,7 +1,9 @@
+temperatura = 0
+
 def on_forever():
+    global temperatura
     # Obtener la temperatura del micro:bit
     temperatura = input.temperature()
-
     # Condiciones para mostrar diferentes imágenes según la temperatura
     if temperatura > 25:
         basic.show_icon(IconNames.UMBRELLA)
@@ -9,5 +11,4 @@ def on_forever():
         basic.show_icon(IconNames.SQUARE)
     else:
         basic.show_icon(IconNames.HAPPY)
-
 basic.forever(on_forever)
